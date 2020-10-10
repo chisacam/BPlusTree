@@ -63,12 +63,13 @@ public class Main {
             }
             switch (menusel) {
                 case "검색":
-                    System.out.println("검색할 단어를 입력해주세요.");
+                    System.out.println("검색할 단어를 입력해주세요.\n");
                     String inputword = scanner.nextLine();
                     String[] userwordstring = inputword.split(" ");
                     for(int j = 0; j < userwordstring.length;j++) {
-
+                        bptree.searchLeaf(indexroot, userwordstring[j]);
                     }
+                    bptree.printArrayList();
                     break;
                 case "test":
                     bptree.printIndexNode(indexroot);
